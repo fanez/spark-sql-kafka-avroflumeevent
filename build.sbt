@@ -24,8 +24,8 @@ libraryDependencies ++= Seq(
     exclude("com.sun.jmx", "jmxri")
     exclude("org.slf4j", "slf4j-simple"),
 
-  "org.apache.spark" %% "spark-streaming" % "1.3.0-cdh5.4.7",
-  "org.apache.spark" %% "spark-streaming-kafka" % "1.3.0-cdh5.4.7",
+  "org.apache.spark" %% "spark-streaming" % "1.3.0-cdh5.4.7"  % "provided",
+  "org.apache.spark" %% "spark-streaming-kafka" % "1.3.0-cdh5.4.7" % "provided" ,
   "org.apache.spark" %% "spark-sql" % "1.3.0-cdh5.4.7" % "provided",
   "org.apache.spark" %% "spark-hive" % "1.3.0-cdh5.4.7" % "provided",
 
