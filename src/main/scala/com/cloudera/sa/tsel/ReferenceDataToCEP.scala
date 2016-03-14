@@ -28,7 +28,7 @@ class ReferenceDataToCEP(
   def serializerFunc(data: Row): KeyedMessage[String, AvroFlumeEvent] = {
     val event = new AvroFlumeEvent(
       buildHeaders(),
-      ByteBuffer.wrap(data.mkString(param.delimiter).getBytes))
+      buildBody(data, param.delimiter))
     new KeyedMessage(param.topic, event)
   }
 
@@ -36,6 +36,10 @@ class ReferenceDataToCEP(
     Map[CharSequence, CharSequence](
       "datafeed" -> param.datafeed
     )
+  }
+
+  def buildBody(data: Row, delimiter: String): ByteBuffer = {
+    ByteBuffer.wrap(data.mkString(delimiter).getBytes)
   }
 
   def writeToKafka(rdd: RDD[Row], producerConfProp: Properties): Unit = {
