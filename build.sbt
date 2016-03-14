@@ -29,6 +29,8 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % "1.3.0-cdh5.4.7" % "provided",
   "org.apache.spark" %% "spark-hive" % "1.3.0-cdh5.4.7" % "provided",
 
+  "com.beust" % "jcommander" % "1.48",
+
   "junit" % "junit" % "4.12" % "test",
   "org.scalatest" %% "scalatest" % "2.2.6" % "test",
   "org.apache.curator" % "curator-test" % "3.1.0" % "test",
