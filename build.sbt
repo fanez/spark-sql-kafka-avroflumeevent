@@ -58,3 +58,10 @@ mergeStrategy in assembly := {
   case "reference.conf"                                    => MergeStrategy.concat
   case _                                                   => MergeStrategy.first
 }
+
+assemblyExcludedJars in assembly <<= (fullClasspath in assembly) map { cp =>
+  val excludes = Set(
+    "javax.servlet-3.0.0.v201112011016.jar"
+  )
+  cp filter { jar => excludes(jar.data.getName) }
+}
