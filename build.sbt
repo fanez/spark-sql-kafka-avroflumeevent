@@ -29,6 +29,8 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % "1.3.0-cdh5.4.7" % "provided",
   "org.apache.spark" %% "spark-hive" % "1.3.0-cdh5.4.7" % "provided",
 
+  "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "provided,test,compile" artifacts Artifact("javax.servlet", "jar", "jar"),
+
   "com.beust" % "jcommander" % "1.48",
 
   "junit" % "junit" % "4.12" % "test",
